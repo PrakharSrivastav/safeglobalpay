@@ -1,0 +1,46 @@
+/* ==========================================================================
+Author's custom styles
+========================================================================== */
+a.navbar-brand  	{color:skyblue !important; font-size: 28px;}
+.carousel-main 		{width:105% !important;margin-left:-20px }
+body 				{overflow-x:hidden;font-family: Lato,sans-serif}
+.carousel-caption 	{font-size: 2em;padding-bottom: 160px;font-weight: 700;}
+.features 			{min-height:400px;}
+.feature-header 	{color:blue !important; font-size: 28px;}
+.glyphicon   		{color:skyblue}
+
+/********************************** Admin styles **************************/
+#admin-footer		{position:absolute;bottom:50px;width:100%;  padding:10px 0px 2px 0px ; margin-bottom:0px;}
+#login-box 			{padding:30px;margin-top:7%;margin-bottom:50px;background-color:#9ACFEA}
+a#logout_btn 		{margin:10px 10px 0px 0px;padding:5px;color:white;}
+a#logout_btn:hover 	{background-position: 0px !important;}
+#vendor-create-form {padding:30px 10px 10px 10px;}
+body				{background:lightgrey;}
+.padding-top-10     {padding-top:10px;}
+.padding-top-20     {padding-top:20px;}
+.padding-top-30     {padding-top:30px;}
+.padding-top-40     {padding-top:40px;}
+.padding-top-50     {padding-top:50px;}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	.carousel-caption 	{font-size: 2em;padding-bottom: 130px;font-weight: 400;}
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+   	.carousel-main 	{ width:108% !important;}
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+}
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+   .carousel-main 	{ width:112% !important;}
+   .carousel-caption {display: none}
+   #space {height:50px;}
+}
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+}
+
