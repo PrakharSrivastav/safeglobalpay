@@ -37,6 +37,11 @@
 						<tr><td class="text-center">Payment Term</td>				<td class="text-center"><?=$payment_term?></td></tr>
 						<tr><td class="text-center">Initial Reserve</td>			<td class="text-center"><?=$result['v_initial_reserve']?></td></tr>
 						<tr><td class="text-center">Vendor Status</td>				<td class="text-center"><?=$status?></td></tr>
+						<tr><td class="text-center">Account Name</td>				<td class="text-center"><?=$result['v_account_name']?></td></tr>
+						<tr><td class="text-center">Account Number</td>				<td class="text-center"><?=$result['v_account_num']?></td></tr>
+						<tr><td class="text-center">Bank Name</td>					<td class="text-center"><?=$result['v_bank_name']?></td></tr>
+						<tr><td class="text-center">Bank Code</td>					<td class="text-center"><?=$result['v_bank_code']?></td></tr>
+						<tr><td class="text-center">Bank Details</td>				<td class="text-center"><?=$result['v_bank_details']?></td></tr>
 						
 					<?php //endforeach; ?>
 				<?php } ?>

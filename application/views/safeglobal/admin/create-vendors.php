@@ -48,9 +48,9 @@
 					<input value="<?php echo set_value('v_percent'); ?>" type="text" class="form-control" id="v_percent" name="v_percent" placeholder="Percentage Commission on each transaction (eg 15.50)">
 				</div>
 				<div class="form-group">
-					<label for="v_reser"> Rolling reserve * (in USD):</label>
+					<label for="v_reser"> Rolling reserve * (in %):</label>
 					<?php echo form_error('v_reser'); ?>
-					<input value="<?php echo set_value('v_reser'); ?>" type="text" class="form-control" id="v_reser" name="v_reser" placeholder="Vendor Rolling Reserve (eg 1500.00)">
+					<input value="<?php echo set_value('v_reser'); ?>" type="text" class="form-control" id="v_reser" name="v_reser" placeholder="Vendor Rolling Reserve (eg 12.00)">
 				</div>
 				<div class="form-group">
 					<label for="v_time"> Rolling Reserve Duration * (in months):</label>

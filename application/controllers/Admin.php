@@ -200,6 +200,9 @@ class Admin extends CI_Controller {
 			$this->form_validation->set_rules("v_initial_reserve","Initial Security Reserve","required|decimal");
 			$this->form_validation->set_rules("v_contact","Vendor Contact","required|numeric");
 			$this->form_validation->set_rules("v_alt_contact","Vendor Alternate Contact","required|numeric");
+			$this->form_validation->set_rules("v_account_name","Vendor's Account Name","required");
+			$this->form_validation->set_rules("v_account_num","Vendor's Account Number","required");
+			$this->form_validation->set_rules("v_bank_name","Vendor's Bank Name","required");
 			
 			$v_id = $this->uri->segment(3);	
 			if(strlen(trim($v_id)) < 1){
@@ -222,6 +225,11 @@ class Admin extends CI_Controller {
 					$vendor['v_initial_reserve']		= trim($this->input->post("v_initial_reserve"));
 					$vendor['v_contact'] 				= trim($this->input->post("v_contact"));
 					$vendor['v_alt_contact'] 			= trim($this->input->post("v_alt_contact"));
+					$vendor["v_account_name"]			=	trim($this->input->post("v_account_name"));
+					$vendor["v_account_num"]			=	trim($this->input->post("v_account_num"));
+					$vendor["v_bank_name"]				=	trim($this->input->post("v_bank_name"));
+					$vendor["v_bank_code"]				=	trim($this->input->post("v_bank_code"));
+					$vendor["v_bank_details"]			=	trim($this->input->post("v_bank_details"));
 					$where = array("v_id"=>$v_id,"v_role"=>"1","v_email"=>$vendor['v_email']);
 					$this->load->model("vendor_model","vendor");
 					if($this->vendor->update_vendor($vendor,$where)){
