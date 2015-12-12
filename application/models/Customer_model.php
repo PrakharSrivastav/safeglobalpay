@@ -63,6 +63,21 @@ class Customer_model extends CI_Model {
 		}
 	}
 	
+	public function get_cust($c_id) {
+		try {
+			$this -> db -> select();
+			$this -> db -> where(array("c_id"=>$c_id));
+			$result = $this -> db -> get("sgp_customer");
+			if ($result -> num_rows() < 1)
+				return false;
+			else {
+				return $result -> result_array();
+			}
+		} catch(Exception $e) {
+			throw new Exception($e -> getMessage());
+		}
+	}
+
 	public function delete_customer($c_id) {
 		try {
 			if(empty($c_id)){
