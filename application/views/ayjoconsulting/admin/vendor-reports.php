@@ -2,12 +2,13 @@
 <?php $this->load->view("ayjoconsulting/common/navigation") ?>
 <div  class="container-fluid">
     <div align="center" class="padding-top-20">
-        <?php if (isset($email_status) && $email_status) { ?>
+        <?php if (isset($email_status) && $email_status)
+        { ?>
             <div class="alert alert-success alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <?= $email_status ?>
+            <?= $email_status ?>
             </div>
-        <?php } ?>
+<?php } ?>
     </div>
     <div class="row">
         <ul>
@@ -34,7 +35,8 @@
                 </tr>
             </thead>
             <tbody>
-                <?php if ($result !== false) { ?>
+                <?php if ($result !== false)
+                { ?>
                     <?php foreach ($result as $record) : ?>
                         <?php
                         $status = "";
@@ -58,8 +60,8 @@
                         ?>
                     <td><?= html_escape($record['v_name']); ?></td>
                     <td><?= html_escape($record['v_email']); ?></td>
-                    <td><?= html_escape($status); ?></td>
-                    <td class="text-center"><a href="<?= site_url() . '/admin/payout_vendor/' . $record['v_id'] ?>" ><span style="color:black" class="glyphicon glyphicon glyphicon-check"></a></span></td>
+                    <td><?= html_escape($status); ?></td><!--payout_vendor-->
+                    <td class="text-center"><a href="<?= site_url() . '/admin/select_report_dates/' . $record['v_id'] ?>" ><span style="color:black" class="glyphicon glyphicon glyphicon-check"></a></span></td>
                     <td class="text-center"><a href="<?= site_url() . '/admin/cb_ref_vendor/' . $record['v_id'] ?>" ><span style="color:black" class="glyphicon glyphicon glyphicon-minus-sign"></a></span></td>
                     <td class="text-center"><a href="<?= site_url() . '/admin/get_vendor_transactions/' . $record['v_id'] ?>" ><span style="color:black" class="glyphicon glyphicon-credit-card"></a></span></td>
                     <td class="text-center"><a href="<?= site_url() . '/admin/vendor_payment_reports/' . $record['v_id'] ?>" ><span style="color:black" class="glyphicon glyphicon-tasks"></a></span></td>

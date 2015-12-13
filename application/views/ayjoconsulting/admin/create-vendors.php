@@ -69,6 +69,11 @@
                     <input value="<?php echo set_value('v_chargeback'); ?>" type="text" class="form-control" id="v_chargeback" name="v_chargeback" placeholder="Percentage Deduction on Chargeback (eg 15.50)">
                 </div>
                 <div class="form-group">
+                    <label for="v_min_chargeback"> Min Chargeback Amount * :</label>
+                    <?php echo form_error('v_min_chargeback'); ?>
+                    <input value="<?php echo set_value('v_min_chargeback'); ?>" type="text" class="form-control" id="v_min_chargeback" name="v_min_chargeback" placeholder="Minimum Chargeback Deduction in USD (eg 60.00)">
+                </div>
+                <div class="form-group">
                     <label for="v_cont"> Payment Terms * :</label>
                     <?php echo form_error('v_payment_term'); ?>
                     <!-- <input value="<?php echo set_value('username'); ?>" type="text" class="form-control" id="v_cont" name="v_cont" placeholder="Mobile Number"> -->

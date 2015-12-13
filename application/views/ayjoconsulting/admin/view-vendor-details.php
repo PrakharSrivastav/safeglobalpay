@@ -36,6 +36,7 @@
                         <tr><td class="text-center">Rolling Reserve Duration</td>	<td class="text-center"><?= html_escape($result['v_rolling_res_duration']) . " Months" ?></td></tr>
                         <tr><td class="text-center">Refund Penalty</td>				<td class="text-center"><?= html_escape($result['v_refund_penalty']); ?></td></tr>
                         <tr><td class="text-center">Chargeback Penalty</td>			<td class="text-center"><?= html_escape($result['v_chargeback_penalty']); ?></td></tr>
+                        <tr><td class="text-center">Min Chargeback Amount</td>			<td class="text-center"><?= html_escape($result['v_min_chargeback']); ?></td></tr>
                         <tr><td class="text-center">Payment Date</td>				<td class="text-center"><?= html_escape($result['v_payment_date']); ?></td></tr>
                         <tr><td class="text-center">Payment Term</td>				<td class="text-center"><?= html_escape($payment_term); ?></td></tr>
                         <tr><td class="text-center">Security Deposit</td>			<td class="text-center"><?= html_escape($result['v_initial_reserve']); ?></td></tr>

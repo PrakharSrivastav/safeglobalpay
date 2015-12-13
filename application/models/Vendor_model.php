@@ -156,7 +156,10 @@ class Vendor_model extends CI_Model {
             if (empty($where)) {
                 return false;
             } else {
+                $this->db->select_sum('rr_amount');
                 $this->db->where($where);
+//                $query = $this->db->get('members');
+                
                 $result = $this->db->get("sgp_rr_calculation");
                 if ($result->num_rows() < 1)
                     return 0;

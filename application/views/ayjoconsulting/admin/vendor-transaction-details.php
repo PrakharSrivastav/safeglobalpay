@@ -3,9 +3,9 @@
 <div class="container-fluid">
     <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-10 col-md-10 col-sm-10 col-xs-12">
         <div class="padding-top-30">
-            <a href = "<?= site_url() . '/admin/process_download/' . $result[0]['v_id'] . "/" . $type; ?>" class="btn btn-primary">Download Report</a>
+            <a href = "<?= site_url() . '/admin/process_download/' . $result[0]['tr_ref_id'] . "/" . $type; ?>" class="btn btn-primary">Download Report</a>
         </div>
-
+        
         <div class="table-responsive padding-top-20">
             <table class="table table-bordered table-condensed" style="font-size:11px;">
                 <thead>
@@ -30,6 +30,7 @@
                         <?php foreach ($result as $record) : ?>
                             <?php
                             $amount = "";
+                            
                             if ($record['tr_type'] == "0") {
                                 $trans_type = "Payment";
                                 $amount = "+" . $record['tr_amount'];
@@ -55,8 +56,10 @@
                             // else
                             // $from = $record['v_email'];
                             ?>
-                            <?php if ($record['tr_type'] == "3" && $record['tr_status'] != "2") { ?>
-                                <tr class="info">
+                            <?php if ($record['tr_type'] == "2" || $record['tr_type'] == "1") { ?>
+                                <tr class="warning">
+                            <?php } else if ($record['tr_type'] == "3" && $record['tr_status'] != "2") { ?>
+                                <tr class="success">
                             <?php } else if ($record['tr_status'] == "2") { ?>
                                 <tr class="danger">
                             <?php } else { ?>

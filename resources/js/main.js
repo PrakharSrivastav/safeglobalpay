@@ -44,6 +44,7 @@ var validator1 = $('#vendorCreateForm').validate({
         v_time: {required: true, digits: true},
         v_refund: {required: true, regex: /^[0-9]+\.[0-9]+$/},
         v_chargeback: {required: true, regex: /^[0-9]+\.[0-9]+$/},
+        v_min_chargeback: {required: true, regex: /^[0-9]+\.[0-9]+$/},
         v_payment_term: {required: true},
         v_init_reserve: {required: true, regex: /^[0-9]+\.[0-9]+$/},
         v_init_setup_reserve: {required: true, regex: /^[0-9]+\.[0-9]+$/},
@@ -63,6 +64,7 @@ var validator1 = $('#vendorCreateForm').validate({
         v_time: {required: "<small style='color:red;font-weight:400;'>The Rolling Reserve Duration field is required.</small>", digits: "<small style='color:red;font-weight:400;'>The Rolling Reserve Duration field must contain an integer.</small>"},
         v_refund: {required: "<small style='color:red;font-weight:400;'>The Refund Deductions field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Refund Deductions field must contain a decimal number.</small>"},
         v_chargeback: {required: "<small style='color:red;font-weight:400;'>The Chargeback Deductions field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Chargeback Deductions field must contain a decimal number.</small>"},
+        v_min_chargeback: {required: "<small style='color:red;font-weight:400;'>The Min Chargeback Amount field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Min Chargeback Amount field must contain a decimal number.</small>"},
         v_payment_term: {required: "<small style='color:red;font-weight:400;'>The Payment Duration field is required.</small>"},
         v_init_reserve: {required: "<small style='color:red;font-weight:400;'>The Security Deposit field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Security Deposit field must contain a decimal number.</small>"},
         v_init_setup_reserve: {required: "<small style='color:red;font-weight:400;'>The Setup Fees field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Setup Fees field must contain a decimal number.</small>"},
@@ -93,6 +95,7 @@ var validator2 = $('#editVendorForm').validate({
         v_rolling_res_duration: {required: true, digits: true},
         v_refund_penalty: {required: true, regex: /^[0-9]+\.[0-9]+$/},
         v_chargeback_penalty: {required: true, regex: /^[0-9]+\.[0-9]+$/},
+        v_min_chargeback: {required: true, regex: /^[0-9]+\.[0-9]+$/},
         v_payment_term: {required: true},
         v_initial_reserve: {required: true, regex: /^[0-9]+\.[0-9]+$/},
         v_init_setup_reserve: {required: true, regex: /^[0-9]+\.[0-9]+$/},
@@ -110,6 +113,7 @@ var validator2 = $('#editVendorForm').validate({
         v_rolling_res_duration: {required: "<small style='color:red;font-weight:400;'>The Rolling Reserve Duration field is required.</small>", digits: "<small style='color:red;font-weight:400;'>The Rolling Reserve Duration field must contain an integer.</small>"},
         v_refund_penalty: {required: "<small style='color:red;font-weight:400;'>The Refund Deductions field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Refund Deductions field must contain a decimal number.</small>"},
         v_chargeback_penalty: {required: "<small style='color:red;font-weight:400;'>The Chargeback Deductions field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Chargeback Deductions field must contain a decimal number.</small>"},
+        v_min_chargeback: {required: "<small style='color:red;font-weight:400;'>The Min Chargeback Amount field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Min Chargeback Amount field must contain a decimal number.</small>"},
         v_payment_term: {required: "<small style='color:red;font-weight:400;'>The Payment Duration field is required.</small>"},
         v_initial_reserve: {required: "<small style='color:red;font-weight:400;'>The Security Deposit field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Security Deposit field must contain a decimal number.</small>"},
         v_init_setup_reserve: {required: "<small style='color:red;font-weight:400;'>The Setup Fees field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Setup Fees field must contain a decimal number.</small>"},
@@ -132,11 +136,17 @@ $("#editVendorButton").on("click", function (e) {
 var validator3 = $('#payout_form').validate({
     rules: {
         transaction_amount: {required: true, regex: /^[0-9]+\.[0-9]+$/},
-        transaction_description: {required: true, minlength: 10}
+        transaction_description: {required: true, minlength: 10},
+        year: {required: true},
+        month: {required: true},
+        rr_amount: {required: true, regex: /^[0-9]+\.[0-9]+$/}
     },
     messages: {
         transaction_amount: {required: "<small style='color:red;font-weight:400;'>The Payout Amount field is required.</small>", regex: "<small style='color:red;font-weight:400;'>The Chargeback Deductions field must contain a decimal number.</small>"},
-        transaction_description: {required: "<small style='color:red;font-weight:400;'>The Transaction Description field is required</small>", minlength: "<small style='color:red;font-weight:400;'>The Transaction Description field must be at least 10 characters in length.</small>"}
+        transaction_description: {required: "<small style='color:red;font-weight:400;'>The Transaction Description field is required</small>", minlength: "<small style='color:red;font-weight:400;'>The Transaction Description field must be at least 10 characters in length.</small>"},
+        year: {required: "<small style='color:red;font-weight:400;'>The Year field is required</small>"},
+        month: {required: "<small style='color:red;font-weight:400;'>The Month field is required</small>"},
+        rr_amount: {required: "<small style='color:red;font-weight:400;'>The RR Amount field is required</small>", regex: "<small style='color:red;font-weight:400;'>The RR Amount field must contain a decimal number.</small>"}
     }
 });
 $("#payout_form_submit").on("click", function (e) {

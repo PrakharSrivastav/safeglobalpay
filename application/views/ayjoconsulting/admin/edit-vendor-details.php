@@ -55,6 +55,11 @@
                     <input value="<?= $result['v_chargeback_penalty'] ?>" type="text" class="form-control" id="v_chargeback_penalty" name="v_chargeback_penalty" placeholder="Percentage Deduction on Chargeback (eg 15.50)">
                 </div>
                 <div class="form-group">
+                    <label for="v_min_chargeback"> Min Chargeback Amount * :</label>
+                    <?php echo form_error('v_min_chargeback'); ?>
+                    <input value="<?php echo $result['v_min_chargeback']; ?>" type="text" class="form-control" id="v_min_chargeback" name="v_min_chargeback" placeholder="Minimum Chargeback Deduction in USD (eg 60.00)">
+                </div>
+                <div class="form-group">
                     <label for="v_payment_term"> Payment Terms * :</label>
                     <?php echo form_error('v_payment_term'); ?>
                     <!-- <input value="<?= $result['v_payment_term'] ?>" type="text" class="form-control" id="v_payment_term" name="v_payment_term" placeholder="Monthly , Weekly or Bi-Monthly"> -->
